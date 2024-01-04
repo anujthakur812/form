@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fee Submission Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="feeSubmissionForm">
+        <label for="studentName">Student Name:</label>
+        <input type="text" id="studentName" name="studentName" required>
+
+        <label for="registrationNumber">Registration Number:</label>
+        <input type="text" id="registrationNumber" name="registrationNumber" required>
+
+        <label for="course">Course:</label>
+        <select id="course" name="course" required>
+            <option value="math">Math</option>
+            <option value="english">English</option>
+            <!-- Add more options as needed -->
+        </select>
+
+        <label for="feeAmount">Fee Amount:</label>
+        <input type="number" id="feeAmount" name="feeAmount" required>
+
+        <button type="submit">Submit Fee</button>
+    </form>
+
+    <script>
+        document.getElementById("feeSubmissionForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // You can add JavaScript code here to handle the form submission, e.g., send data to a server.
+
+            // For demonstration purposes, let's log the form data to the console.
+            var formData = new FormData(event.target);
+            for (var pair of formData.entries()) {
+                console.log(pair[0] + ': ' + pair[1]);
+            }
+        });
+    </script>
+
+</body>
+</html>
